@@ -35,7 +35,7 @@ public class GpsDevicesController {
 		return gpsDeviceService.getActive();
 	}
 	
-	@PutMapping("/adddevice/{number}/{latitude}/{longitude}")
+	@GetMapping("/adddevice/{number}/{latitude}/{longitude}")
 	public GpsDevices addDevice(@PathVariable long number , @PathVariable double latitude , @PathVariable double longitude) {
 		GpsDevices device = new GpsDevices(number , latitude , longitude , "NO");
 		return gpsDeviceService.addDevice(device);
